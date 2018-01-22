@@ -1,0 +1,13 @@
+[Unit]
+Description=Manager - OpenSfera Service
+After=mongodb.service
+
+[Service]
+Type=idle
+User=sfera
+WorkingDirectory=/usr/local/sfera/manager
+ExecStart=/usr/bin/python3 /usr/local/sfera/manager/manager.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
